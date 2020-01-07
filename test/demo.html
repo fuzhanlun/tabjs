@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabjs Demo</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../src/tabjs.css">
+	<script type="text/javascript" src="../src/tabjs.js"></script>
+</head>
+<body>
+	<div>
+		<textarea id="home-tpl">hello world!</textarea>
+	</div>
+	<div>
+		<a href="#tpl:home-tpl" tabjs-open="tab-show2" title="统计报告">统计报告</a>
+	</div>
+
+	<div id="tab-show1"></div>
+
+	<div id="tab-show2">
+		<ul class="tabjs-title">
+			<li class="tabjs-title-normal">标题1</li>
+			<li class="tabjs-title-active">标题2</li>
+		</ul>
+		<div class="tabjs-content">
+			<div>内容1</div>
+			<div>内容2</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var t = new Tabjs({
+			'el': 'tab-show2'
+		});
+		t.bind();
+	</script>
+</body>
+</html>

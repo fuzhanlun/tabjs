@@ -1,0 +1,26 @@
+/*tab标题激活状态*/
+.tabjs-title-active {color: #f00;}
+
+/*tab标题正常状态*/
+.tabjs-title-normal {color: #000;}
+
+/*tab关闭按钮样式*/
+.tabjs-title-close {font-style: normal; padding-left: 5px;}
+
+/*tab标题样式*/
+.tabjs-title {padding: 0; list-style-type: none;}
+
+/*tab标题内容样式*/
+.tabjs-title li {display: inline-block; vertical-align: middle; cursor: default;}
+
+/*tab内容样式*/
+.tabjs-content {padding: 0; height: 100%;}
+
+/*tab内容中iframe样式*/
+.tabjs-content-iframe {border: 0;}
+
+/*tab内容部分显示*/
+.tabjs-content-show {display: block;}
+
+/*tab内容部分隐藏*/
+.tabjs-content-hide {display: none;}
