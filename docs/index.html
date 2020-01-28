@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabjs Demo</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../src/tabjs.css">
+	<script type="text/javascript" src="../src/tabjs.js"></script>
+	<style type="text/css">
+		* {
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			color: #444;
+			font-size: 16px;
+			line-height: 1.5em;
+			font-family: arial, sans-serif;
+			background-color: #fff;
+		}
+
+		textarea {
+			width: 100%;
+			height: 200px;
+			line-height: 1.5em;
+			border: 1px solid #ccc;
+		}
+
+		h2, h4 {
+			margin: 10px 0;
+		}
+
+		#header {
+			padding: 20px;
+			color: #fff;
+			background-color: #393d49;
+		}
+
+		#navbar {
+			position: fixed;
+			top: 200px;
+			right: 5px;
+			width: 120px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			background-color: #fff;
+		}
+
+		.section {
+			margin-top: 20px;
+			padding: 20px;
+			border-left: 8px solid #009688;
+			background-color: #f5f7fa;
+		}
+
+		.explain {
+			padding: 10px;
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+<!-- 头部区域 -->
+<div id="header">
+	<h1>Tabjs 实例教程</h1>
+</div>
+
+<!-- 导航栏区域 -->
+<div id="navbar">
+	<a href="#install_">安装使用</a><br>
+	<a href="#static_">渲染静态内容</a><br>
+	<a href="#local_">渲染本地模板</a><br>
+</div>
+
+<!-- 主体内容区域 -->
+<div id="content">
+	<div class="section" id="install_">
+		<h2>#安装使用</h2>
+		<div>
+			<h4>1.引入tabjs样式文件</h4>
+			<p>
+				&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;../src/tabjs.css&quot;&gt;
+			</p>
+			<h4>2.引入tabjs库文件</h4>
+			<p>
+				&lt;script type=&quot;text/javascript&quot; src=&quot;../src/tabjs.js&quot;&gt;&lt;/script&gt;
+			</p>
+			<h4>3.创建tabjs实例</h4>
+			<p>
+				var tabjs = new Tabjs({......})
+			</p>
+		</div>
+	</div>
+
+	<div class="section" id="static_">
+		<h2>#渲染静态内容</h2>
+		<h4>效果</h4>
+		<div id="tabjs-static">
+			<ul class="tabjs-title">
+				<li class="tabjs-title-active">标题1</li>
+				<li class="tabjs-title-normal" tabjs-canoff="yes">标题2</li>
+				<li class="tabjs-title-normal">标题3</li>
+			</ul>
+			<div class="tabjs-content">
+				<div>内容1</div>
+				<div>内容2</div>
+				<div>内容3</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			new Tabjs({"el": "tabjs-static"});
+		</script>
+		<h4>代码</h4>
+<textarea>
+<div id="tabjs-static">
+	<ul class="tabjs-title">
+		<li class="tabjs-title-active">标题1</li>
+		<li class="tabjs-title-normal" tabjs-canoff="yes">标题2</li>
+		<li class="tabjs-title-normal">标题3</li>
+	</ul>
+	<div class="tabjs-content">
+		<div>内容1</div>
+		<div>内容2</div>
+		<div>内容3</div>
+	</div>
+</div>
+<script type="text/javascript">
+	new Tabjs({"el": "tabjs-static"});
+</script>
+</textarea>
+		<div class="explain">参数el：渲染区域的ID值</div>
+	</div>
+
+	<div class="section" id="local_">
+		<h2>#渲染本地模板</h2>
+		<h4>效果</h4>
+		<div id="tabjs-local"></div>
+		<h4>模板</h4>
+		<textarea id="tpl2" readonly="readonly">Hello Tabjs!</textarea>
+		<script type="text/javascript">
+			(new Tabjs({"el": "tabjs-local"})).open("#tpl:tpl2", "项目2", false);
+		</script>
+		<h4>代码</h4>
+<textarea>
+<div id="tabjs-local"></div>
+&lt;textarea id="tpl2"&gt;Hello Tabjs!&lt;/textarea&gt;
+<script type="text/javascript">
+	(new Tabjs({"el": "tabjs-local"})).open("#tpl:tpl2", "项目2", false);
+</script>
+</textarea>
+	</div>
+
+	<div class="section" id="remote_">
+		<h2>#渲染远程模板</h2>
+		<h4>效果</h4>
+		<div id="tabjs-remote"></div>
+		<script type="text/javascript">
+			(new Tabjs({"el": "tabjs-remote"})).open("#get:./tpl/hello.html", "项目3", false);
+		</script>
+	</div>
+
+
+</div>
+</body>
+</html>

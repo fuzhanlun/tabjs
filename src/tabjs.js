@@ -14,7 +14,10 @@
 			page = null, //Tab内容组
 			sign = [], //Tab标记集合
 			curid = 0, //保存索引值
-			incre = 0; //自增ID值
+			incre = 0, //自增ID值
+			exp1 = new RegExp('[^<]+'), //提取标题内容
+			exp2 = new RegExp('<script>([\\s\\S]+?)</script>', 'ig'); //提取模板脚本内容
+
 		//默认设置
 		var option = {
 			'el': '', //Tab容器id
@@ -42,12 +45,19 @@
 		// 进行初始化
 		if (option.showTitle == false) head.style.display = 'none';
 		for (var i = 0; i < head.childNodes.length; i++) {
+			if (head.childNodes[i].nodeType != 1) continue;
+			//渲染标题部分
+			if (head.childNodes[i].getAttribute('tabjs-canoff') == 'yes') {
+				head.childNodes[i].innerHTML += '<i class="tabjs-title-close">'+option.offIcon+'</i>';
+			}
+			//渲染主体部分
 			if (head.childNodes[i].className == 'tabjs-title-active') {
 				page.childNodes[i].className = 'tabjs-content-show';
 			} else {
 				page.childNodes[i].className = 'tabjs-content-hide';
 			}
-			if (head.childNodes[i].nodeType == 1) sign.push(head.childNodes[i].innerHTML); //保存标题内容
+			//保存标题内容
+			sign.push(exp1.exec(head.childNodes[i].innerHTML)[0]);
 		}
 	
 		// 查找Tab 返回索引值
@@ -145,7 +155,6 @@
 	
 		// 添加Tab页面
 		function add(src, title, content, off) {
-			var regexp = new RegExp('<script>([\\s\\S]+?)</script>', 'ig');
 			var result = null;
 			var id = seek(title);
 	
@@ -158,12 +167,12 @@
 				head.appendChild(el);
 	
 				content = content.replace(/__/g, incre++); //替换__ 防止ID重复
-				result = regexp.exec(content); //保存匹配结果
+				result = exp2.exec(content); //保存匹配结果
 	
 				//添加Tab内容
 				el = document.createElement('div');
 				el.className = 'tabjs-content-hide';
-				el.innerHTML = content.replace(regexp, ''); //去掉script标签
+				el.innerHTML = content.replace(exp2, ''); //去掉script标签
 				page.appendChild(el);
 	
 				//处理script脚本 自动调用main函数
@@ -242,7 +251,7 @@
 
 					if (o.parentNode.nodeName == 'A') o = o.parentNode;
 					if (o.nodeName == 'A' && o.getAttribute('tabjs-open') == option.el) {
-						var off = o.getAttribute('tabjs-canoff') == '0'? false : true;
+						var off = o.getAttribute('tabjs-canoff') == 'yes'? true: false;
 						
 						open(o.getAttribute('href'), o.getAttribute('title') || o.innerHTML, off);
 						e.preventDefault();
@@ -257,7 +266,7 @@
 							var e = event || window.event;
 							var o = e.srcElement? e.srcElement: e.target;
 							if (o.parentNode.nodeName == 'A') o = o.parentNode;
-							var off = o.getAttribute('tabjs-canoff') == '0'? false : true;
+							var off = o.getAttribute('tabjs-canoff') == 'yes'? true: false;
 
 							open(o.getAttribute('href'), o.getAttribute('title') || o.innerHTML, off);
 							e.preventDefault();
