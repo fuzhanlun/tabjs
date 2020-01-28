@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
+## Tabjs是什么
+Tabjs是用于快速构建tab功能的JS组件，与其他tab组件不同的是Tabjs可以将页面HTML片段、远程HTML片段及其他页面动态渲染到tab容器中。Tabjs不依赖第三方库，体积小、速度快，不仅易于上手、更易于与前端框架结合。Tabjs追求功能上的极致，提供了最为简单的页面样式，开发者需要自行覆盖CSS样式创建个性化的tab效果。
 
-You can use the [editor on GitHub](https://github.com/fuzhanlun/tabjs/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Tabjs引入
+- tabjs.js 文件
+- tabjs.css 文件
+``` css
+<link rel="stylesheet" type="text/css" href="tabjs/tabjs.css">
+```
+``` javascript
+<script type="text/javascript" src="tabjs/tabjs.js"></script>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Tabjs教程
+[实例教程](https://fuzhanlun.github.io/tabjs/docs/)
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/fuzhanlun/tabjs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Tabjs接口
+``` javascript
+var tabjs = new Tabjs({......})
+```
