@@ -4,6 +4,7 @@ Tabjs是用于快速构建tab功能的JS组件，与其他tab组件不同的是T
 ## Tabjs引入
 - tabjs.js 文件
 - tabjs.css 文件
+
 ``` css
 <link rel="stylesheet" type="text/css" href="tabjs/tabjs.css">
 ```
