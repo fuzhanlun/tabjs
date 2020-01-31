@@ -20,13 +20,13 @@
 
 		//默认设置
 		var option = {
-			'el': '', //Tab容器id
+			'tid': '', //Tab容器id
 			'offIcon': '×', //关闭按钮字符
 			'showTitle': true, //标题显示状态
 			'beforeAct': function() {} //页面激活前触发
 		};
 
-		if (typeof parm == 'string') option.el = parm;
+		if (typeof parm == 'string') option.tid = parm;
 		if (typeof parm == 'object') {
 			//覆盖默认设置
 			for (var k in parm) {
@@ -34,7 +34,7 @@
 			}
 		}
 
-		tab = document.getElementById(option.el);
+		tab = document.getElementById(option.tid);
 		if (tab == null) return false;
 		if (tab.innerHTML == '') {
 			tab.innerHTML = '<ul class="tabjs-title"></ul><div class="tabjs-content"></div>';
@@ -261,7 +261,7 @@
 				var nodes = document.getElementsByTagName('A');
 
 				for (var i = 0; i < nodes.length; i++) {
-					if (nodes[i].getAttribute('tabjs-open') == option.el) {
+					if (nodes[i].getAttribute('tabjs-open') == option.tid) {
 						attach(nodes[i], CLICK, function(event){
 							var e = event || window.event;
 							var o = e.srcElement? e.srcElement: e.target;
@@ -282,14 +282,14 @@
 		this.open = open;
 		this.bind = bind;
 		
-		F.obj[option.el] = this;
+		F.obj[option.tid] = this;
 	}
 
 	// 定义静态变量和方法
 	F.obj = {};
 
-	F.find = function(eid) {
-		return F.obj[eid];
+	F.find = function(tid) {
+		return F.obj[tid];
 	};
 
 	// 导出对象

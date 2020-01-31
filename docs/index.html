@@ -110,7 +110,7 @@
 			</div>
 		</div>
 		<script type="text/javascript">
-			new Tabjs({"el": "tabjs-static"});
+			new Tabjs({"tid": "tabjs-static"});
 		</script>
 		<h4>代码</h4>
 <textarea>
@@ -127,7 +127,7 @@
 	</div>
 </div>
 <script type="text/javascript">
-	new Tabjs({"el": "tabjs-static"});
+	new Tabjs({"tid": "tabjs-static"});
 </script>
 </textarea>
 		<div class="explain">参数el：渲染区域的ID值</div>
@@ -140,14 +140,14 @@
 		<h4>模板</h4>
 		<textarea id="tpl2" readonly="readonly">Hello Tabjs!</textarea>
 		<script type="text/javascript">
-			(new Tabjs({"el": "tabjs-local"})).open("#tpl:tpl2", "项目2", false);
+			(new Tabjs({"tid": "tabjs-local"})).open("#tpl:tpl2", "项目2", false);
 		</script>
 		<h4>代码</h4>
 <textarea>
 <div id="tabjs-local"></div>
 &lt;textarea id="tpl2"&gt;Hello Tabjs!&lt;/textarea&gt;
 <script type="text/javascript">
-	(new Tabjs({"el": "tabjs-local"})).open("#tpl:tpl2", "项目2", false);
+	(new Tabjs({"tid": "tabjs-local"})).open("#tpl:tpl2", "项目2", false);
 </script>
 </textarea>
 	</div>
@@ -157,7 +157,7 @@
 		<h4>效果</h4>
 		<div id="tabjs-remote"></div>
 		<script type="text/javascript">
-			(new Tabjs({"el": "tabjs-remote"})).open("#get:./tpl/hello.html", "项目3", false);
+			(new Tabjs({"tid": "tabjs-remote"})).open("#get:./tpl/hello.html", "项目3", false);
 		</script>
 	</div>
 
