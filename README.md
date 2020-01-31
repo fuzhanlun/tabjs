@@ -22,17 +22,17 @@ var tabjs = new Tabjs({......})
 
 ### 配置参数
 
-|参数|说明|属性|
-|--|--|--|
-|tid|tab容器id|必选|
-|offIcon|关闭按钮字符，默认为×|可选|
-|showTitle|是否显示tab标签，默认为true|可选|
-|beforeAct|激活前运行方法|可选|
+参数|说明|属性
+--|--|--
+tid|tab容器id|必选
+offIcon|关闭按钮字符，默认为×|可选
+showTitle|是否显示tab标签，默认为true|可选
+beforeAct|激活前运行方法|可选
 
 ## Tabjs方法
 
 |方法|说明|属性|
-|--|--|--|
+|----|----|----|
 |open(src, title, off)|src:请求地址 title:选项卡标题 off:true或false,选项卡能否关闭|实例方法|
 |bind(el)|el:需要绑定的超链接对象，为空的话则绑定页面所有超链接对象。|实例方法|
 |find(tid)|tid:tab容器id|静态方法|
