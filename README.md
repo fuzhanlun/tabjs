@@ -21,6 +21,7 @@ var tabjs = new Tabjs({......})
 ```
 
 ### 配置参数
+
 |参数|说明|属性|
 |--|--|--|
 |tid|tab容器id|必选|
@@ -29,6 +30,7 @@ var tabjs = new Tabjs({......})
 |beforeAct|激活前运行方法|可选|
 
 ## Tabjs方法
+
 |方法|说明|属性|
 |--|--|--|
 |open(src, title, off)|src:请求地址 title:选项卡标题 off:true或false,选项卡能否关闭|实例方法|
