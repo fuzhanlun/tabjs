@@ -33,6 +33,6 @@ var tabjs = new Tabjs({......})
 
 |方法|说明|属性|
 |--	|--	|--	|
-|open(src, title, off)|src:请求地址 title:选项卡标题 off:true或false,选项卡能否关闭|实例方法|
-|bind(el)|el:需要绑定的超链接对象，为空的话则绑定页面所有超链接对象。|实例方法|
-|find(tid)|tid:tab容器id|静态方法|
+|open(src, title, off)|src: 请求地址<br>title: 选项卡标题<br>off: true或false,选项卡能否关闭|实例方法|
+|bind(el)|el: 需要绑定的超链接对象，为空的话则绑定页面所有超链接对象。|实例方法|
+|find(tid)|tid: tab容器id|静态方法|
