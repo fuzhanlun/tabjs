@@ -250,7 +250,7 @@
 					var o = e.srcElement? e.srcElement: e.target;
 
 					if (o.parentNode.nodeName == 'A') o = o.parentNode;
-					if (o.nodeName == 'A' && o.getAttribute('tabjs-open') == option.el) {
+					if (o.nodeName == 'A' && o.getAttribute('tabjs-open') == option.tid) {
 						var off = o.getAttribute('tabjs-canoff') == 'yes'? true: false;
 						
 						open(o.getAttribute('href'), o.getAttribute('title') || o.innerHTML, off);
