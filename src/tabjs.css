@@ -7,6 +7,9 @@
 /*tab关闭按钮样式*/
 .tabjs-title-close {font-style: normal; padding-left: 5px;}
 
+/*tab关闭按钮鼠标悬停样式*/
+.tabjs-title-close:hover {color: red;}
+
 /*tab标题样式*/
 .tabjs-title {padding: 0; list-style-type: none;}
 
