@@ -1,6 +1,6 @@
 /*
- * Tabjs (v1.0.0)
- * Copyright: 2019
+ * Tabjs (v1.0.2)
+ * Copyright: 2020
  * Author: fuzhanlun
  * License: MIT
  */
@@ -176,7 +176,7 @@
 				page.appendChild(el);
 	
 				//处理script脚本 自动调用main函数
-				if (result) (new Function('$title', '$href', result[1] + ';main();'))(title, src);
+				if (result) (new Function('$title', '$href', result[1] + ';(typeof main === "function") && main();'))(title, src);
 			}
 			return id;
 		}
@@ -230,6 +230,10 @@
 						}
 					}
 				});
+			}
+
+			if (/^#htm:(\S+)$/.test(src)) {
+				return act(add(null, title, RegExp.$1, off));
 			}
 		}
 
